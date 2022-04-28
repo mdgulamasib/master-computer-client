@@ -1,9 +1,21 @@
+import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/CommonSection/Footer/Footer";
+import Header from "./Components/CommonSection/Header/Header";
+import Blogs from "./Components/Pages/Blogs/Blogs";
+import Home from "./Components/Pages/Home/Home/Home";
 
 
 function App() {
   return (
     <div>
-      <h1>Environment setup</h1>
+      <Header></Header>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/blog" element={<Blogs></Blogs>}></Route>
+      </Routes>
+      <Footer></Footer>
     </div>
   );
 }
