@@ -10,7 +10,7 @@ const Header = () => {
         <>
             <Navbar collapseOnSelect expand="lg" className='custom-navbar'>
                 <Container>
-                    <Navbar.Brand as={Link} to='/'><img src={logo} className='me-md-5 ' height={90} alt="" /></Navbar.Brand>
+                    <Navbar.Brand as={Link} to='/'><img src={logo} className='me-md-5 ' height={80} alt="" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto custom-text">
