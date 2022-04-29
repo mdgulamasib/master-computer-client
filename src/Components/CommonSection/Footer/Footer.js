@@ -2,6 +2,9 @@ import React from 'react';
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
+import { BsFillCursorFill } from "react-icons/bs";
+import { BsFillEnvelopeFill } from "react-icons/bs";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import './Footer.css'
 
 const Footer = () => {
@@ -19,9 +22,9 @@ const Footer = () => {
 
                     <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
                         <h5 className="text-uppercase mb-4">Master Computer</h5>
-                        <span className="fa-li"><i className="fas fa-home mb-3"></i></span><span  >Sheikhergaon, Ramsree-3301, Habiganj</span><br />
-                        <span className="fa-li"><i className="fas fa-envelope"></i></span><span  >contact@mastercomputer.com</span><br />
-                        <span className="fa-li"><i className="fas fa-phone"></i></span><span  >+880 1770000000</span>
+                        <span className="fa-li"><BsFillCursorFill /></span><span  > Sheikhergaon, Ramsree-3301, Habiganj</span><br />
+                        <span className="fa-li"><BsFillEnvelopeFill /></span><span  > contact@mastercomputer.com</span><br />
+                        <span className="fa-li"><BsFillTelephoneFill /></span><span  > +880 1770000000</span>
                     </div>
 
 
