@@ -1,0 +1,23 @@
+.text-color {
+    color: rgb(2, 51, 51);
+}
+
+.btn-bg {
+    background-color: rgb(2, 51, 51);
+    font-weight: 700;
+}
+
+.divider-bg {
+    background-color: rgb(2, 51, 51);
+    height: 3px;
+}
+
+.responsive-width {
+    width: 25%;
+}
+
+@media only screen and (max-width:576px) {
+    .responsive-width {
+        width: 75%;
+    }
+}

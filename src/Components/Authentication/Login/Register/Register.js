@@ -56,7 +56,7 @@ const Register = () => {
     }
 
     return (
-        <div className='container w-50 text-center responsive-width mx-auto'>
+        <div className='container text-center responsive-width mx-auto'>
             <h2 className=' text-color text-center my-5 fw-bold'>Please Register</h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="username">
