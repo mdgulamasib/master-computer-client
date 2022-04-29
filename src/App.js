@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./Components/Authentication/Login/Login";
-import Register from "./Components/Authentication/Login/Register/Register";
+import Register from "./Components/Authentication/Register/Register";
 import Footer from "./Components/CommonSection/Footer/Footer";
 import Header from "./Components/CommonSection/Header/Header";
 import Blogs from "./Components/Pages/Blogs/Blogs";
