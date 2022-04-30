@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const UpdateItems = () => {
     const { itemId } = useParams();
@@ -56,24 +56,27 @@ const UpdateItems = () => {
     }
 
     return (
-        <div className=" container w-50 card mt-5 mb-5" style={{ width: "auto" }}>
-            <img src={itemData.img} className="card-img-top img-sizing" alt="..." />
-            <div className="card-body">
-                <h4 className="card-title">{itemData.name}</h4>
-                <h6 className="card-text fw-bold">Approximate Fees: ${itemData.price}</h6>
-                <p className="card-text">{itemData.description}</p>
-                <p>Quantity: {itemData.quantity}</p>
-                <p>Supplier: {itemData.supplier}</p>
+        <>
+            <div className=" container w-50 card mt-5 mb-5" style={{ width: "auto" }}>
+                <img src={itemData.img} className="card-img-top img-sizing" alt="..." />
+                <div className="card-body">
+                    <h4 className="card-title">{itemData.name}</h4>
+                    <h6 className="card-text fw-bold">Approximate Fees: ${itemData.price}</h6>
+                    <p className="card-text">{itemData.description}</p>
+                    <p>Quantity: {itemData.quantity}</p>
+                    <p>Supplier: {itemData.supplier}</p>
 
+                </div>
+
+                <button onClick={handleDelivered} className='mb-3 w-50 mx-auto'>Delivered</button>
+
+                <form onSubmit={handleUpdateQuantity} className="text-center">
+                    <input type="number" name="quantity" placeholder='quantity' required /><br />
+                    <input className='mt-3 w-50' type="submit" value="Add Quantity" />
+                </form>
             </div>
-
-            <button onClick={handleDelivered} className='mb-3 w-50 mx-auto'>Delivered</button>
-
-            <form onSubmit={handleUpdateQuantity} className="text-center">
-                <input type="number" name="quantity" placeholder='quantity' required /><br />
-                <input className='mt-3 w-50' type="submit" value="Add Quantity" />
-            </form>
-        </div>
+            <h5 className='text-center'><Link to="/manageinventory"><button className='my-5 p-2'>Manage Inventory</button></Link></h5>
+        </>
     );
 };
 

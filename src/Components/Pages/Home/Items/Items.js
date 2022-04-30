@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ItemsCard from '../ItemsCard/ItemsCard';
 
 const Items = () => {
@@ -11,14 +12,15 @@ const Items = () => {
 
     return (
         <div className='container'>
-            <h2 className='text-center mt-5'>Top Stock Items</h2>
-            <div className='row'>
-                {
-                    items.map(item => <ItemsCard key={item._id} item={item}></ItemsCard>)
-                }
+            <div>
+                <h2 className='text-center mt-5'>Top Stock Items</h2>
+                <div className='row'>
+                    {
+                        items.slice(0, 6).map(item => <ItemsCard key={item._id} item={item}></ItemsCard>)
+                    }
+                </div>
+                <h5 className='text-center'><Link to="/manageinventory"><button className='my-5 p-2'>Manage Inventory</button></Link></h5>
             </div>
-
-
         </div>
     );
 };

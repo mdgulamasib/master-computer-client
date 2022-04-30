@@ -5,6 +5,7 @@ import Footer from "./Components/CommonSection/Footer/Footer";
 import Header from "./Components/CommonSection/Header/Header";
 import Blogs from "./Components/Pages/Blogs/Blogs";
 import Home from "./Components/Pages/Home/Home/Home";
+import ManageInventory from "./Components/Pages/ManageInventory/ManageInventory";
 import UpdateItems from "./Components/Pages/UpdateItemData/UpdateItems/UpdateItems";
 
 
@@ -17,6 +18,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/updateitems/:itemId" element={<UpdateItems></UpdateItems>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/manageinventory" element={<ManageInventory></ManageInventory>}></Route>
       </Routes>
       <Routes>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
