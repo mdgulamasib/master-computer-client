@@ -7,6 +7,7 @@ import AddNewItems from "./Components/Pages/AddNewItems/AddNewItems";
 import Blogs from "./Components/Pages/Blogs/Blogs";
 import Home from "./Components/Pages/Home/Home/Home";
 import ManageInventory from "./Components/Pages/ManageInventory/ManageInventory";
+import MyItems from "./Components/Pages/MyItems/MyItems";
 import UpdateItems from "./Components/Pages/UpdateItemData/UpdateItems/UpdateItems";
 
 
@@ -25,6 +26,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/addnewitem" element={<AddNewItems></AddNewItems>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/myitems" element={<MyItems></MyItems>}></Route>
       </Routes>
       <Routes>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
