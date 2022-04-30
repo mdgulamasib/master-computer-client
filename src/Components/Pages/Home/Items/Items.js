@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { CardGroup } from 'react-bootstrap';
 import ItemsCard from '../ItemsCard/ItemsCard';
 
 const Items = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('http://localhost:5000/items')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

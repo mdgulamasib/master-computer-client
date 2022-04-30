@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import './ItemsCard.css'
 
 const ItemsCard = ({ item }) => {
-    const { name, img, price, description, quantity, supplier } = item;
+    const { _id, name, img, price, description, quantity, supplier } = item;
 
     const navigate = useNavigate();
 
     const navigateToUpdate = id => {
-        navigate('/updateitems')
+        navigate(`/updateitems/${id}`)
     }
 
     return (
@@ -21,7 +21,7 @@ const ItemsCard = ({ item }) => {
                     <p className="card-text">{description}</p>
                     <p>Quantity: {quantity}</p>
                     <p>Supplier: {supplier}</p>
-                    <button onClick={() => navigateToUpdate()} className="btn-primary update-btn">Update Data</button>
+                    <button onClick={() => navigateToUpdate(_id)} className="btn-primary update-btn">Update Data</button>
                 </div>
             </div>
         </div >
