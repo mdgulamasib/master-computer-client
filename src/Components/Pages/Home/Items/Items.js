@@ -8,6 +8,7 @@ const Items = () => {
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
+
     return (
         <div className='container'>
             <h2 className='text-center mt-5'>Top Stock Items</h2>
