@@ -36,7 +36,7 @@ const ManageInventory = () => {
                         items.map(item => <InventoryCard key={item._id} item={item} handleItemDelete={handleItemDelete}></InventoryCard>)
                     }
                 </div>
-                <h5 className='text-center'><Link to="/manageinventory"><button className='my-5 p-2'>Add New Items</button></Link></h5>
+                <h5 className='text-center'><Link to="/addnewitem"><button className='my-5 p-2'>Add New Items</button></Link></h5>
             </div>
         </div>
     );

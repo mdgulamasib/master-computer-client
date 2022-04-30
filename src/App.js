@@ -3,6 +3,7 @@ import Login from "./Components/Authentication/Login/Login";
 import Register from "./Components/Authentication/Register/Register";
 import Footer from "./Components/CommonSection/Footer/Footer";
 import Header from "./Components/CommonSection/Header/Header";
+import AddNewItems from "./Components/Pages/AddNewItems/AddNewItems";
 import Blogs from "./Components/Pages/Blogs/Blogs";
 import Home from "./Components/Pages/Home/Home/Home";
 import ManageInventory from "./Components/Pages/ManageInventory/ManageInventory";
@@ -21,6 +22,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/manageinventory" element={<ManageInventory></ManageInventory>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/addnewitem" element={<AddNewItems></AddNewItems>}></Route>
       </Routes>
       <Routes>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
