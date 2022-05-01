@@ -45,8 +45,8 @@ const MyItems = () => {
 
     return (
         <div className='container'>
-            <h1>My added Items: {myItems.length}</h1>
-            <div className='row'>{
+            <h2 className='fw-bold text-center mt-5'>TOTAL ITEM ADDED - {myItems.length}</h2>
+            <div className='row  mb-5'>{
                 myItems.map(item => <MyItemCard key={item._id} item={item} handleItemDelete={handleItemDelete}></MyItemCard>)
             }</div>
         </div>

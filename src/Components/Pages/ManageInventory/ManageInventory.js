@@ -30,18 +30,16 @@ const ManageInventory = () => {
     return (
         <div className='container'>
             <div>
-                <h2 className='text-center mt-5'>Top Stock Items</h2>
+                <h2 className='text-center mt-5 fw-bold'>ALL STOCK ITEMS</h2>
                 <div className='row'>
                     {
                         items.map(item => <InventoryCard key={item._id} item={item} handleItemDelete={handleItemDelete}></InventoryCard>)
                     }
                 </div>
-                <h5 className='text-center'><Link to="/addnewitem"><button className='my-5 p-2'>Add New Items</button></Link></h5>
+                <h5 className='text-center'><Link to="/addnewitem"><button className='my-5 p-2 btn-design'>ADD NEW ITEM</button></Link></h5>
             </div>
         </div>
     );
 };
 
 export default ManageInventory;
-
-

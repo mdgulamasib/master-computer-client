@@ -1,0 +1,14 @@
+/* card button styling */
+.btn-design {
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(3, 94, 11);
+    color: white;
+}
+
+
+/* card button hover effect */
+.btn-design:hover {
+    background-color: rgb(11, 8, 43);
+}

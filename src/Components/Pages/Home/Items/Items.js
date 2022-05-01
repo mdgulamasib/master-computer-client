@@ -13,13 +13,13 @@ const Items = () => {
     return (
         <div className='container'>
             <div>
-                <h2 className='text-center mt-5'>Top Stock Items</h2>
+                <h2 className='text-center mt-5 fw-bold'>TOP ITEMS ON STOCK</h2>
                 <div className='row'>
                     {
                         items.slice(0, 6).map(item => <ItemsCard key={item._id} item={item}></ItemsCard>)
                     }
                 </div>
-                <h5 className='text-center'><Link to="/manageinventory"><button className='my-5 p-2'>Manage Inventory</button></Link></h5>
+                <h5 className='text-center'><Link to="/manageinventory"><button className='my-5 p-2 btn-design'>MANAGE INVENTORY</button></Link></h5>
             </div>
         </div>
     );

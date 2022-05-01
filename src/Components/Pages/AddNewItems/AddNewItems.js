@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import './AddNewItems.css'
 
 const AddNewItems = () => {
     const [user] = useAuthState(auth);
@@ -34,24 +35,25 @@ const AddNewItems = () => {
     }
     return (
         <div className='container text-center mx-auto'>
-            <h2>Add New Items</h2>
+            <h2 className='my-3 fw-bold'>ADD NEW ITEM</h2>
             <form onSubmit={handleAddItem}>
-                <input type="text" name="name" placeholder='Item Name' required />
+                <input type="text" className='custom-field' name="name" placeholder='Item Name' required />
                 <br />
-                <input type="number" name="price" placeholder='Item Price' required />
+                <input type="number" name="price" className='custom-field' placeholder='Item Price' required />
                 <br />
-                <textarea type="text" name="description" placeholder='Item Description' required cols="22" rows="2"></textarea>
+                <textarea type="text" name="description" placeholder='Item Description' className='custom-field' required cols="22" rows="2"></textarea>
                 <br />
-                <input type="text" name="img" placeholder='Item Image URL' required />
+                <input type="text" name="img" className='custom-field' placeholder='Item Image URL' required />
                 <br />
-                <input type="number" name="quantity" placeholder='Quantity' required />
+                <input type="number" className='custom-field' name="quantity" placeholder='Quantity' required />
                 <br />
-                <input type="text" name="supplier" placeholder='Item supplier' required />
+                <input type="text" name="supplier" className='custom-field' placeholder='Item supplier' required />
                 <br />
-                <input type="submit" value="Add Item" />
+                <input type="submit" className='btn-design my-3' value="ADD  ITEM" />
             </form>
         </div>
     );
 };
 
 export default AddNewItems;
+

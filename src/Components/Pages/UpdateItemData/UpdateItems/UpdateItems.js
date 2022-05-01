@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './UpdateItems.css'
 
 const UpdateItems = () => {
     const { itemId } = useParams();
@@ -57,7 +58,7 @@ const UpdateItems = () => {
 
     return (
         <>
-            <div className=" container w-50 card mt-5 mb-5" style={{ width: "auto" }}>
+            <div className=" container w-75 card mt-5 mb-5" style={{ width: "auto" }}>
                 <img src={itemData.img} className="card-img-top img-sizing" alt="..." />
                 <div className="card-body">
                     <h4 className="card-title">{itemData.name}</h4>
@@ -68,16 +69,17 @@ const UpdateItems = () => {
 
                 </div>
 
-                <button onClick={handleDelivered} className='mb-3 w-50 mx-auto'>Delivered</button>
+                <button onClick={handleDelivered} className='mb-3 mx-auto btn-design'>Delivered</button>
 
                 <form onSubmit={handleUpdateQuantity} className="text-center">
                     <input type="number" name="quantity" placeholder='quantity' required /><br />
-                    <input className='mt-3 w-50' type="submit" value="Add Quantity" />
+                    <input className='mt-3 btn-design' type="submit" value="Add Quantity" />
                 </form>
             </div>
-            <h5 className='text-center'><Link to="/manageinventory"><button className='my-5 p-2'>Manage Inventory</button></Link></h5>
+            <h5 className='text-center'><Link to="/manageinventory"><button className='my-5 p-2 btn-design'>MANAGE INVENTORY</button></Link></h5>
         </>
     );
 };
 
 export default UpdateItems;
+
