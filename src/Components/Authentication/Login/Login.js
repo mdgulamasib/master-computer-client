@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
@@ -42,12 +42,23 @@ const Login = () => {
 
 
 
-    const handleSignIn = event => {
+    const handleSignIn = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
+        await fetch('http://localhost:5000/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        })
+            .then(res => res.json())
+            .then(data => { localStorage.setItem('accessToken', data.accessToken) });
     }
+
+
 
     const navigateRegister = event => {
         navigate('/register')

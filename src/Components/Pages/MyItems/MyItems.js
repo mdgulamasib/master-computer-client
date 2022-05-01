@@ -1,24 +1,29 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Navigate, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import MyItemCard from '../MyItemCard/MyItemCard';
 
 const MyItems = () => {
 
     const [user] = useAuthState(auth)
-
     const [myItems, setMyItems] = useState([]);
-    console.log(myItems)
     useEffect(() => {
 
         async function fetchMyAPI() {
             const email = user?.email;
-            let data = await fetch(`http://localhost:5000/myitems?email=${email}`)
-            data = await data.json()
-            setMyItems(data)
+            const url = `http://localhost:5000/myitems?email=${email}`;
+            await fetch(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => setMyItems(data))
         }
         fetchMyAPI()
-    }, [user])
+    }, [user?.email])
 
 
     const handleItemDelete = id => {
