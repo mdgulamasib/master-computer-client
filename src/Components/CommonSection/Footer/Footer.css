@@ -1,3 +1,9 @@
+/* footer background */
+.background {
+    background-color: rgb(11, 8, 43);
+}
+
+/* social link decoration none */
 .link-style {
     text-decoration: none;
 }

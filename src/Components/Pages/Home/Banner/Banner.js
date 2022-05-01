@@ -1,6 +1,5 @@
 import React from 'react';
 import './Banner.css';
-import { Carousel, CarouselItem, NavItem } from 'react-bootstrap';
 import img1 from '../../../../images/banner/img1.png'
 import img2 from '../../../../images/banner/img2.png'
 import img3 from '../../../../images/banner/img3.png'

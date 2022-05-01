@@ -1,6 +1,6 @@
 .background-img {
     background-image: url('../../../../images/banner_bg.png');
-    opacity: 0.8;
+
     color: rgb(227, 241, 241);
 }
 
@@ -13,7 +13,6 @@
     align-items: center;
     text-align: center;
 }
-
 
 @media only screen and (max-width:576px) {
     .highlighting {

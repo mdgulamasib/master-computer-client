@@ -1,8 +1,14 @@
+/* navbar background color */
 .custom-navbar {
-    background-color: rgba(199, 247, 247, 0.233);
+    background-color: rgb(11, 8, 43);
 }
 
+/* navbar text color and hover effect*/
 .custom-text {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 15px;
+    color: white;
+}
+
+.custom-text:hover {
+    color: goldenrod;
 }
