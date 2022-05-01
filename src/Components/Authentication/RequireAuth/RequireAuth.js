@@ -4,6 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Spinner from '../LoadingStatus/Spinner/Spinner'
+import './RequireAuth.css'
 
 const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
@@ -26,7 +27,7 @@ const RequireAuth = ({ children }) => {
     if (!user.emailVerified) {
         return <div className='verify-style'>
             <h2>Your Email Is Not Verified Yet!!!</h2>
-            <button className='btn-primary' variant="primary"
+            <button className='btn-design' variant="primary"
                 onClick={async () => {
                     await sendEmailVerification();
                     toast.success("Email Sent, Please Check Inbox Or Spam Folder", {
@@ -38,7 +39,7 @@ const RequireAuth = ({ children }) => {
                 Get Verify Email
             </button><br />
             <p className='mt-3'>Once you have confirmed the Email, Please reload the page</p>
-            <button className='btn-primary' variant="primary" onClick={refreshPage}>
+            <button className='btn-design mb-5' variant="primary" onClick={refreshPage}>
                 Page Reload
             </button>
             <ToastContainer></ToastContainer>

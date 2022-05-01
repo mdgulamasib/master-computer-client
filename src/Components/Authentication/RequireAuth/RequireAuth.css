@@ -1,0 +1,10 @@
+.verify-style {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.verify-style h2 {
+    color: red;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
