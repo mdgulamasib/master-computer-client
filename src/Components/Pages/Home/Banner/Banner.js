@@ -1,36 +1,50 @@
 import React from 'react';
 import './Banner.css';
-import img1 from '../../../../images/banner/img1.png'
-import img2 from '../../../../images/banner/img2.png'
-import img3 from '../../../../images/banner/img3.png'
+import img1 from '../../../../images/banner/img1.jpg'
+import img2 from '../../../../images/banner/img2.jpg'
+import img3 from '../../../../images/banner/img3.jpg'
+import { Carousel } from 'react-bootstrap';
 
 const Banner = () => {
 
     return (
-        <div className='background-img'>
-            <div className='container w-75'>
-                <div className='text-center'>
-                    <h3 className='pt-5'>Welcome to</h3>
-                    <h3>Master Computer</h3>
-                    <h3 className='mb-0 pb-5'> Warehouse Management System</h3>
-                </div>
-                <div className='highlighting pb-5'>
-                    <div>
-                        <img className='img-size' src={img1} alt="" />
-                        <h5>User Friendly Software</h5>
-                    </div>
-                    <div>
-                        <img className='img-size' src={img2} alt="" />
-                        <h5>Easy Warehouse Management</h5>
-                    </div>
-                    <div>
-                        <img className='img-size' src={img3} alt="" />
-                        <h5>Hassle Free Navigation</h5>
-                    </div>
+        <Carousel fade>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img1}
+                    alt="First slide"
+                />
+                <Carousel.Caption>
+                    <h3>Elitebook Laptop</h3>
+                    <p>A sophisticated choice,  combining industry-leading security with beauty, durability, and funcationality.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img2}
+                    alt="Second slide"
+                />
 
-                </div>
-            </div>
-        </div>
+                <Carousel.Caption>
+                    <h3>HP + NVIDIA RTX</h3>
+                    <p>See how NVidia RTXTM graphics powers Z by HP Workstation for ultimate Creative workflow.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img3}
+                    alt="Third slide"
+                />
+
+                <Carousel.Caption>
+                    <h3>HP Mobile Workstation</h3>
+                    <p>For technical and creative professionals who need ultimate performance on-the-go.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel>
     );
 };
 
