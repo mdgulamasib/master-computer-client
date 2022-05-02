@@ -49,7 +49,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password)
-        await fetch('http://localhost:5000/login', {
+        await fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

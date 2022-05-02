@@ -22,12 +22,24 @@ const GoogleSignIn = () => {
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
+
     if (user) {
-        navigate(from, { replace: true });
+        const email = user?.user?.email;
+        fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        })
+            .then(res => res.json())
+            .then(data => { localStorage.setItem('accessToken', data.accessToken) });
     }
 
-
-
+    if (user) {
+        navigate(from, { replace: true });
+        window.location.reload(false);
+    }
 
     return (
         <div>

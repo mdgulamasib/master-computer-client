@@ -13,7 +13,7 @@ const MyItems = () => {
 
         async function fetchMyAPI() {
             const email = user?.email;
-            const url = `http://localhost:5000/myitems?email=${email}`;
+            const url = `https://tranquil-escarpment-61810.herokuapp.com/myitems?email=${email}`;
             try {
                 await fetch(url, {
                     headers: {
@@ -38,7 +38,7 @@ const MyItems = () => {
     const handleItemDelete = id => {
         const proceed = window.confirm('Deleting Items is Permanent! Think twice before pressing OK...');
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

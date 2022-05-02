@@ -47,6 +47,15 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password);
         await sendEmailVerification();
         await updateProfile({ displayName: name });
+        await fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        })
+            .then(res => res.json())
+            .then(data => { localStorage.setItem('accessToken', data.accessToken) });
     }
 
     const navigateRegister = event => {
