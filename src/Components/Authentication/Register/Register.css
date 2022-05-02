@@ -1,13 +1,15 @@
-.text-color {
-    color: rgb(2, 51, 51);
+.form-align {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    margin: auto;
 }
 
-.btn-bg {
-    background-color: rgb(2, 51, 51);
-    font-weight: 700;
-}
 
-.divider-bg {
-    background-color: rgb(2, 51, 51);
-    height: 3px;
+
+@media only screen and (max-width:576px) {
+    .form-align {
+        width: 70%;
+    }
 }

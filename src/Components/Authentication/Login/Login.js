@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import Spinner from '../../Authentication/LoadingStatus/Spinner/Spinner'
+import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 
 
 const Login = () => {
@@ -47,7 +48,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password)
-        await fetch('http://localhost:5000/login', {
+        await fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -89,8 +90,8 @@ const Login = () => {
 
     return (
         <div className='container text-center responsive-width mx-auto'>
-            <h2 className=' text-color text-center my-5 fw-bold'>Please Login</h2>
-            <Form onSubmit={handleSignIn}>
+            <h2 className=' text-color text-center my-5 fw-bold'>PLEASE LOGIN</h2>
+            <Form onSubmit={handleSignIn} className="form-align">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Email Address" required />
                 </Form.Group>
@@ -98,7 +99,7 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Button className='btn-bg w-50' variant="primary" type="submit">
+                <Button className='btn-design' variant="primary" type="submit">
                     Login
                 </Button>
             </Form>
@@ -108,11 +109,12 @@ const Login = () => {
                 <p className='mt-3 mb-0'>Don't have an account?<span className='text-primary btn' onClick={navigateRegister}>Click to Register</span></p>
                 <p className='m-0'>Forget Password?<span className='btn  text-primary' onClick={resetPassword}>Reset Password</span></p>
             </div>
-            <div className='d-flex align-items-center'>
+            <div className='d-flex align-items-center w-25  mx-auto'>
                 <div className='divider-bg w-50'></div>
                 <p className='mt-2 px-2 fw-bold'>OR</p>
                 <div className='divider-bg w-50'></div>
             </div>
+            <GoogleSignIn></GoogleSignIn>
             <ToastContainer />
 
         </div>

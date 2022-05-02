@@ -4,6 +4,7 @@ import img1 from '../../../../images/banner/img1.jpg'
 import img2 from '../../../../images/banner/img2.jpg'
 import img3 from '../../../../images/banner/img3.jpg'
 import { Carousel } from 'react-bootstrap';
+import './Banner.css'
 
 const Banner = () => {
 
@@ -11,7 +12,7 @@ const Banner = () => {
         <Carousel fade>
             <Carousel.Item>
                 <img
-                    className="d-block w-100"
+                    className="d-block w-100 custom-height"
                     src={img1}
                     alt="First slide"
                 />
@@ -22,7 +23,7 @@ const Banner = () => {
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    className="d-block w-100"
+                    className="d-block w-100 custom-height"
                     src={img2}
                     alt="Second slide"
                 />
@@ -34,7 +35,7 @@ const Banner = () => {
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    className="d-block w-100"
+                    className="d-block w-100 custom-height"
                     src={img3}
                     alt="Third slide"
                 />

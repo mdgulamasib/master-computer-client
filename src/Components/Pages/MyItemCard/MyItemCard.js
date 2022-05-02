@@ -21,7 +21,7 @@ const MyItemCard = ({ item, handleItemDelete }) => {
                     <p className="card-text"><small>{description}</small></p>
                     <p><small> Quantity:{quantity}</small> </p>
                     <p><small>Supplier: {supplier}</small></p>
-                    <button onClick={() => navigateToUpdate(_id)} className="btn-design">Update Data</button>
+                    <button onClick={() => navigateToUpdate(_id)} className="btn-design">Update Quantity</button>
                     <button onClick={() => handleItemDelete(_id)} className="btn-design ms-2">Delete Item</button>
                 </div>
             </div>

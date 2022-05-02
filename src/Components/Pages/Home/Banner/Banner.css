@@ -1,0 +1,6 @@
+/* image height set for mobile device only */
+@media only screen and (max-width:576px) {
+    .custom-height {
+        height: 200px;
+    }
+}

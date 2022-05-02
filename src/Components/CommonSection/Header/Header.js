@@ -19,10 +19,10 @@ const Header = () => {
     return (
         < div>
             <Navbar collapseOnSelect expand="lg" className='custom-navbar'>
-                <Container>
+                <Container className='navbar-dark'>
                     <Navbar.Brand as={Link} to='/'><img src={logo} className='me-md-5 ' height={80} alt="" /></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav " />
+                    <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav className="ms-auto">
                             <Nav.Link className='me-md-3 text-color' as={Link} to="/"><span className='custom-text'>HOME</span></Nav.Link>
                             <Nav.Link className='me-md-3' as={Link} to="/blog"><span className='custom-text'>BLOG</span></Nav.Link>
