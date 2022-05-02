@@ -29,12 +29,15 @@ const UpdateItems = () => {
             body: JSON.stringify(updateItem)
         })
             .then(res => res.json())
-            .then(data => { })
+            .then(data => {
+                console.log('success', data);
+            })
     }
 
     const handleUpdateQuantity = (event, newQuantity) => {
         event.preventDefault();
         const quantity = parseInt(event.target.quantity.value) + parseInt(itemData.quantity);
+        console.log(quantity)
         const updateItem = { quantity };
 
         // sending data for adding quantity
@@ -48,6 +51,7 @@ const UpdateItems = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log('success', data);
                 event.target.reset();
             })
     }

@@ -26,6 +26,7 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <Nav.Link className='me-md-3 text-color' as={Link} to="/"><span className='custom-text'>HOME</span></Nav.Link>
                             <Nav.Link className='me-md-3' as={Link} to="/blog"><span className='custom-text'>BLOG</span></Nav.Link>
+                            <Nav.Link className='me-md-3' as={Link} to="/about"><span className='custom-text'>ABOUT</span></Nav.Link>
 
                             {
                                 user ?
