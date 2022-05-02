@@ -1,0 +1,36 @@
+.custom-box {
+    border: 1px solid rgb(224, 221, 221);
+    border-radius: 5px;
+    padding: 15px;
+    gap: 10px;
+}
+
+.flexing {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text {
+    text-align: justify;
+}
+
+.custom-box:hover {
+    border: 1px solid rgb(241, 178, 19);
+}
+
+.custom-color {
+    color: goldenrod
+}
+
+.img-size {
+    width: 30%;
+}
+
+@media only screen and (max-width:576px) {
+    .flexing {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+}
