@@ -34,6 +34,7 @@ const Login = () => {
 
     if (user) {
         navigate(from, { replace: true });
+        window.location.reload(false);
     }
 
     if (error) {
@@ -48,7 +49,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password)
-        await fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
+        await fetch('http://localhost:5000/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

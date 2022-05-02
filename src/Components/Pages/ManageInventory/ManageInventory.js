@@ -5,7 +5,7 @@ import InventoryCard from '../ManageInventoryCard/InventoryCard';
 const ManageInventory = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('https://tranquil-escarpment-61810.herokuapp.com/items')
+        fetch('http://localhost:5000/items')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
@@ -13,7 +13,7 @@ const ManageInventory = () => {
     const handleItemDelete = id => {
         const proceed = window.confirm('Deleting Items is Permanent! Think twice before pressing OK...');
         if (proceed) {
-            const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${id}`;
+            const url = `http://localhost:5000/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

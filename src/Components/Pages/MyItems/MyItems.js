@@ -1,5 +1,7 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Navigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import MyItemCard from '../MyItemCard/MyItemCard';
 
@@ -11,14 +13,23 @@ const MyItems = () => {
 
         async function fetchMyAPI() {
             const email = user?.email;
-            const url = `https://tranquil-escarpment-61810.herokuapp.com/myitems?email=${email}`;
-            await fetch(url, {
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            const url = `http://localhost:5000/myitems?email=${email}`;
+            try {
+                await fetch(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => setMyItems(data))
+            }
+            catch (error) {
+                console.log(error.message);
+                if (error.response.status === 401 || error.response.status === 403) {
+                    signOut(auth);
+                    Navigate('/login')
                 }
-            })
-                .then(res => res.json())
-                .then(data => setMyItems(data))
+            }
         }
         fetchMyAPI()
     }, [user?.email])
@@ -27,7 +38,7 @@ const MyItems = () => {
     const handleItemDelete = id => {
         const proceed = window.confirm('Deleting Items is Permanent! Think twice before pressing OK...');
         if (proceed) {
-            const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${id}`;
+            const url = `http://localhost:5000/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

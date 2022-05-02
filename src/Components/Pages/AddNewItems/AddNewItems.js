@@ -20,7 +20,7 @@ const AddNewItems = () => {
         const newItem = { name, price, description, img, quantity, supplier, email };
 
         // send data new added item data
-        fetch('https://tranquil-escarpment-61810.herokuapp.com/items', {
+        fetch('http://localhost:5000/items', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

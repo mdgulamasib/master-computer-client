@@ -7,7 +7,7 @@ const UpdateItems = () => {
 
     const [itemData, setItemData] = useState({});
     useEffect(() => {
-        const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${itemId}`;
+        const url = `http://localhost:5000/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItemData(data));
@@ -20,7 +20,7 @@ const UpdateItems = () => {
         const updateItem = { quantity };
 
         // sending data for decrease data by 1
-        const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${itemId}`;
+        const url = `http://localhost:5000/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -41,7 +41,7 @@ const UpdateItems = () => {
         const updateItem = { quantity };
 
         // sending data for adding quantity
-        const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${itemId}`;
+        const url = `http://localhost:5000/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
