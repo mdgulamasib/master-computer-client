@@ -19,7 +19,8 @@ const ItemsCard = ({ item }) => {
                     <h4 className="card-title">{name}</h4>
                     <h6 className="card-text fw-bold">Approximate Fees: ${price}</h6>
                     <p className="card-text"><small>{description}</small></p>
-                    <p><small> Quantity:{quantity}</small> </p>
+                    <p><small> Quantity:{quantity > 0 ?
+                        quantity : ' Out of Stock'}</small> </p>
                     <p><small>Supplier: {supplier}</small></p>
                     <button onClick={() => navigateToUpdate(_id)} className="btn-design">Update Quantity</button>
                 </div>
