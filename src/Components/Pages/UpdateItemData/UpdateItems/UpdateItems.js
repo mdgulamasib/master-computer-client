@@ -62,7 +62,8 @@ const UpdateItems = () => {
                     <h4 className="card-title">{itemData.name}</h4>
                     <h6 className="card-text fw-bold">Approximate Fees: ${itemData.price}</h6>
                     <p className="card-text">{itemData.description}</p>
-                    <p>Quantity: {itemData.quantity}</p>
+                    <p>Quantity: {itemData.quantity > 0 ?
+                        itemData.quantity : 'Out of Stock'}</p>
                     <p>Supplier: {itemData.supplier}</p>
 
                 </div>
