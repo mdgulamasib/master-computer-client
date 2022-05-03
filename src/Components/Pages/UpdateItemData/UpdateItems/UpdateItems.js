@@ -6,12 +6,15 @@ const UpdateItems = () => {
     const { itemId } = useParams();
 
     const [itemData, setItemData] = useState({});
+    const [reload, setIsReload] = useState(true)
+
+
     useEffect(() => {
         const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItemData(data));
-    });
+    }, [reload]);
 
     const handleDelivered = event => {
         event.preventDefault();
@@ -30,7 +33,7 @@ const UpdateItems = () => {
         })
             .then(res => res.json())
             .then(data => {
-
+                setIsReload(!reload)
             })
     }
 
@@ -51,6 +54,7 @@ const UpdateItems = () => {
             .then(res => res.json())
             .then(data => {
                 event.target.reset();
+                setIsReload(!reload)
             })
     }
 
