@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import Spinner from '../../Authentication/LoadingStatus/Spinner/Spinner'
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
+import useToken from '../../../Hooks/useToken'
 
 
 const Login = () => {
@@ -27,14 +28,14 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [token] = useToken(user);
 
     if (loading || sending) {
         return <Spinner></Spinner>
     }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
-        window.location.reload(false);
     }
 
     if (error) {
@@ -49,15 +50,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password)
-        await fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ email })
-        })
-            .then(res => res.json())
-            .then(data => { localStorage.setItem('accessToken', data.accessToken) });
+
     }
 
 

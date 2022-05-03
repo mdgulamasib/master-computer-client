@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import Spinner from '../LoadingStatus/Spinner/Spinner'
 import google_icon from '../../../images/google_icon.png'
 import './GoogleSignIn.css'
+import useToken from '../../../Hooks/useToken';
 const GoogleSignIn = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -15,6 +16,7 @@ const GoogleSignIn = () => {
 
 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [token] = useToken(user)
     if (loading) {
         return <Spinner></Spinner>
     }
@@ -23,22 +25,9 @@ const GoogleSignIn = () => {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
-    if (user) {
-        const email = user?.user?.email;
-        fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ email })
-        })
-            .then(res => res.json())
-            .then(data => { localStorage.setItem('accessToken', data.accessToken) });
-    }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
-        window.location.reload(false);
     }
 
     return (

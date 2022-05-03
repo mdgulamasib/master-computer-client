@@ -7,6 +7,7 @@ import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 import Spinner from '../LoadingStatus/Spinner/Spinner'
 import './Register.css'
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
+import useToken from '../../../Hooks/useToken';
 
 const Register = () => {
     const nameRef = useRef('')
@@ -27,12 +28,13 @@ const Register = () => {
     const [updateProfile, updating] = useUpdateProfile(auth);
 
     const [sendEmailVerification] = useSendEmailVerification(auth);
+    const [token] = useToken(user);
 
     if (loading || updating) {
         return <Spinner></Spinner>
     }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
     if (error) {
@@ -47,15 +49,6 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password);
         await sendEmailVerification();
         await updateProfile({ displayName: name });
-        await fetch('https://tranquil-escarpment-61810.herokuapp.com/login', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ email })
-        })
-            .then(res => res.json())
-            .then(data => { localStorage.setItem('accessToken', data.accessToken) });
     }
 
     const navigateRegister = event => {
