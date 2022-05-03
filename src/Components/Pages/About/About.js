@@ -1,8 +1,11 @@
 import React from 'react';
+import image from '../../../images/welcome to.png'
+import './About.css'
 
 const About = () => {
     return (
         <div className='container'>
+            <img className='img' src={image} alt="" />
             <h2 className='text-center my-5 fw-bold'>ABOUT MASTER COMPUTER LTD</h2>
             <p><strong>Master Computer ltd</strong> is one of the largest retail chain stores for computer products in Bangladesh. We are one of the top market share holder in Tech market. We are working with <strong>APPLE, HP, DELL, LENOVO, MSI, TOSHIBA, PHILIPS, CANON</strong>, etc international companies.
             </p>
